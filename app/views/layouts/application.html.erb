@@ -3,12 +3,18 @@
 <head>
   <title>TestCalendarAvailabities</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <main class="wrapper">
+    <nav class="navigation">
+      <section class="container">
+        <%= link_to "Tracktor Technical test", root_path, class: "navigation-title" %>
+        <%= link_to "https://github.com/instatchip/test_calendar_availabities", rel: :noopener, target: :_blank do %>
+        <% end %>
+      </section>
+    </nav>
+    <%= yield %>
+  </div>
 </body>
 </html>

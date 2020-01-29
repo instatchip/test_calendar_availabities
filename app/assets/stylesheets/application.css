@@ -13,3 +13,85 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+}
+.wrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper .container {
+ max-width:80rem
+}
+.wrapper>.container {
+ padding-bottom:7.5rem;
+ padding-top:7.5rem
+}
+
+.navigation {
+  background: #f4f5f6;
+  border-bottom: .1rem solid #d1d1d1;
+  display: block;
+  height: 5.2rem;
+  left: 0;
+  max-width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navigation .container {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.navigation .navigation-link, .navigation .navigation-title, .navigation .title {
+    display: inline;
+    font-size: 1.6rem;
+    line-height: 5.2rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: .4rem;
+    box-shadow: none;
+    box-sizing: inherit;
+    height: 3.8rem;
+    padding: .6rem 1.0rem;
+    width: 100%;
+}
+
+label.required:after {
+  content: " *"
+}
+
+.field_with_errors input {
+  border-color: red;
+}
+
+.pill {
+  padding: 2px 5px;
+  border-radius: 15px;
+}
+
+.color-green {
+  background-color: #C6F6D5;
+  color: #22543D;
+}
+
+.color-orange {
+  background-color: #FBD38D;
+  color: #7B341E;
+}
