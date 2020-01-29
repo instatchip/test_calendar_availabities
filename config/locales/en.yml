@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      event:
+        starts_at: Beginning of the event
+        ends_at: End of the event
+

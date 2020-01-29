@@ -1,0 +1,63 @@
+<section class="events container">
+  <h2 class="title">Here what to do for this technical test</h2>
+  <p class="description">
+    <ul>
+      <li>1 : Implement the <code>Event.availabilities</code> method according spec found in the <code>test/models/event_test.rb</code> file</li>
+      <li><%= link_to "2 : Show a list of event for the next 2 month", "#level-2" %></li>
+      <li><%= link_to "3 : Show availabilities for the given date", "#level-3" %></li>
+    </ul>
+  </p>
+  <h3 class="title">Create new event</h3>
+  <p class="description"> You can add any required data to play with the app and ensure everything is ok</p>
+  <%= form_with model: @event do |form| %>
+    <fieldset>
+      <div class="row">
+        <div class="column">
+          <%= form.label :kind %>
+          <%= form.select :kind, Event.kinds.keys, prompt: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <%= form.label :starts_at, class: "required" %>
+          <%= form.date_field :starts_at, required: true %>
+        </div>
+        <div class="column">
+          <%= form.label :ends_at, class: "required" %>
+          <%= form.date_field :ends_at, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <%= form.check_box :weekly_recurring %>
+          <%= form.label :weekly_recurring, class: 'label-inline' %>
+        </div>
+      </div>
+    </fieldset>
+    <%= form.submit "Create new events" %>
+  <% end %>
+  <h3 id="#level-2" class="title">2 - Next 2 months events</h3>
+  <p class="description">
+    You have here a list of event. You now need to change it to show them grouped by month and year.</br>
+    List all existing events (both <code>opening</code> and <code>appointment</code>) grouped by month and year.
+  </p>
+  <ul>
+    <% if @recent_events.size.positive? %>
+      <%= render @recent_events %>
+    <% else %>
+      <li>No recents event found</li>
+    <% end %>
+  </ul>
+  <h3 class="title">3 - Find availabilities</h3>
+  <p class="description">
+    Show a list of timing where we can book an event for the given date.
+    Hook on the result of the <code>Event.availabilities</code> You've implemented before
+  </p>
+  <%= form_with url: find_availabilities_events_path do |form| %>
+    <fieldset>
+      <%= form.label :event_date %>
+      <%= form.date_field :event_date %>
+    </fieldset>
+    <%= form.submit "Find availabilities" %>
+  <% end %>
+</section>

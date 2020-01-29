@@ -1,0 +1,4 @@
+<li>
+  <span class="pill <%= event.opening? ? "color-green" : "color-orange" %>"><%= event.kind %></span>
+  from: <%= l(event.starts_at, format: :short) %> -> <%= l(event.ends_at, format: :short) %>
+</li>
